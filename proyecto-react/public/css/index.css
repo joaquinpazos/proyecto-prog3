@@ -1,30 +1,61 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 
-/* #header{
-    border-style: dashed;
-    border-width: 6px;
-    border-color: green;
-    color: green;
-} */
-
+header{
+    /* background-color: lightslategray; */
+    background-color: lightpink;
+    height: 100px;
+}
 
 #divhead{
-    width:100px;
+    display:block;
+    
 }
 
 #logo{
+    display: block;
+    width:250px;
     position:absolute;
-    width: 100px;
-    text-align: left;
+    padding-top: 0.5%;
+    
+    
     
 }
 
 #h1buscador{
     display:block;
     text-align: center;
+    padding-top: 1%;
+}
+
+#tuerca{
+    display:block;
+    position: relative;
+    width: 45px;
+    left: 885px;
+    bottom: 50px;
+}
+
+#lenguajes{
+    display: block;
+    position: relative;
+    width: 50px;
+    left: 1275px;
+    bottom: 90px;
+    border-radius: 10px;
 }
 
 #h1random{
     display:block;
-    text-align: end;
+
+}
+
+input{
+    width: 400px;
+    height: 50px;
+    font-size: 23px;
+    font-style: italic;
+    border-radius: 5px;
 }
