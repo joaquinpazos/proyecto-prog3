@@ -1,3 +1,30 @@
-h1{
-    color: red
+
+
+/* #header{
+    border-style: dashed;
+    border-width: 6px;
+    border-color: green;
+    color: green;
+} */
+
+
+#divhead{
+    width:100px;
+}
+
+#logo{
+    position:absolute;
+    width: 100px;
+    text-align: left;
+    
+}
+
+#h1buscador{
+    display:block;
+    text-align: center;
+}
+
+#h1random{
+    display:block;
+    text-align: end;
 }
