@@ -3,18 +3,19 @@
 
 /* CSS header empieza acá */
 header{
-  background:#89c5d4 ;
+  background:#89c5d4;
+  position:fixed; /* para que se vea siempre */
+  width: 100%; /*para que ocupe todo el largo */
+  z-index: 999; /*para que este por encima de cualquier cosa */
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
 }
 
-#logo{
-  width: 25%;
+.header-container div img{
+  width: 50%;
 }
-
-
-
-
-
-
 /* CSS header termina acá */
 
 
@@ -28,23 +29,22 @@ html, body {
 
 .center {
   display:flex;
-  position: absolute; 
+  position: absolute;   
   top: 60%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
+    /* -webkit-transform: translate(-50%, -50%); */
 }
 
 .card {
-  width: 450px;
-  height: 250px;
+
+  width: 35vw;
+  height: 40vh;
   background-color: #fff;
   background: linear-gradient(#f8f8f8, #fff);
   box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
   border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  margin: 1.5rem;
-  
+  flex: 1;
+  position:relative;
+  margin: 1.5rem; 
 }
 
 .card h1 {
