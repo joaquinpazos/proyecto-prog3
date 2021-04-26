@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+#page-container{
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap{
+  padding-bottom: 2.5rem;
+}
+
+
+
 /* CSS header empieza acá */
 header{
   background:#89c5d4;
@@ -28,6 +39,8 @@ header{
 html, body {
   background: #e1e7f0;
   font-family: Abel, Arial, Verdana, sans-serif;
+  padding-bottom: 40vh;
+  
 }
 
 /* FORMULARIO */
@@ -121,11 +134,11 @@ form.example::after {
   background: linear-gradient(#92bCa6, #A2CCB6);
 }
 
-
+/* 
 .card:hover .additional {
   width: 100%;
   border-radius: 0 5px 5px 0;
-}
+} */
 
 .card .additional .user-card {
   width: 150px;
@@ -267,21 +280,58 @@ form.example::after {
 
 
 /* CSS footer empieza acá*/
-footer {
-  
-  bottom: 0;
-  color: #707070;
-  height: 2em;
-  left: 0;
-  position: relative;
-  font-size: small;
-  width:100%;
+.footer-container{
+  background-color: #212329;
+  padding-bottom: 4rem;
+
 }
 
-#footer-container{
-  bottom:0;
-  background-color: red;
+.footer{
+  width:80%;
+  height: 40vh;
+  background-color: #212329;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  bottom: 0;
+  position: absolute;
+  z-index: -999;
 }
+
+.footer-heading {
+  display:flex;
+  flex-direction: column;
+  margin-right: 4rem;
+
+}
+
+.footer-heading h2{
+  margin-bottom: 2rem;
+
+}
+
+.footer-heading a{
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5rem,
+
+}
+/* 
+.footer-heading a:hover{
+  color: red;
+  transition: 0.3s ease-out;
+} */
+
+
+
+
+
+
+
+
+
 
 /* CSS footer termina acá */
 
@@ -289,3 +339,8 @@ footer {
 /* media queries */
 /* tablet */
 /* mobile */
+
+
+
+
+
