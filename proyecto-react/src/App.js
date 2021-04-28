@@ -1,12 +1,20 @@
-// import Items from "./components/items"
+
+import React from 'react';
+import TarjetaContenedor from "./components/TarjetaContenedor"
 
 
 function App() {
   return (
-    <div className="App">
-      {/* <h1>prueba de react</h1> */}
-     
-    </div>
+
+       
+         <div>
+            
+            <TarjetaContenedor/>  
+
+         </div>
+        
+      
+
   );
 }
 
