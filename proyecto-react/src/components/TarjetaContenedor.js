@@ -9,15 +9,18 @@ function TarjetaContenedor(){
 
         <div class="center">
 
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
-                <Tarjeta/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz"/>
                 
 
         </div>
