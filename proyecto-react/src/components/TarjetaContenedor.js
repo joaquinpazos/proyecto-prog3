@@ -9,18 +9,21 @@ function TarjetaContenedor(){
 
         <div class="center">
 
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
-                <Tarjeta name="Lautaro Ortiz"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
+                
+                
                 
 
         </div>
