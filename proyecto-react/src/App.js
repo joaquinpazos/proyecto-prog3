@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TarjetaContenedor from "./components/TarjetaContenedor"
 
 
-export default class Tarjeta extends Component {
+export default class App extends Component {
 
   constructor(props){
     super(props);
@@ -13,15 +13,16 @@ export default class Tarjeta extends Component {
 
   componentDidMount(){
 
-    fetch('https://randomuser.me/api/?results=20')
+    fetch('https://randomuser.me/api/?results=10')
     .then(result => result.json())
     .then(data => {
       this.setState({items: data.results});
+      console.log(data.results)
     })
-
-    .catch((info)=> console.log(info));
+   
   }
   render(){
+
     return(
       <div className= "body">
         <header className="header">
