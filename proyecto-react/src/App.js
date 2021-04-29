@@ -13,7 +13,7 @@ export default class App extends Component {
 
   componentDidMount(){
 
-    fetch('https://randomuser.me/api/?results=10')
+    fetch('https://randomuser.me/api/?results=10&inc=name,login')
     .then(result => result.json())
     .then(data => {
       this.setState({items: data.results});
@@ -35,6 +35,13 @@ export default class App extends Component {
 
         </div>
         <TarjetaContenedor/>
+        <div className="contenedor">
+        { this.state.items.map((item)=>{
+          return <TarjetaContenedor
+          key={item.login.uuid}
+          informacion={item.name.firts}/>
+        })}
+        </div>
         {/* <div className="tarjetas">
         {this.setState.items.map((info)=>{
           return  <TarjetaContenedor
