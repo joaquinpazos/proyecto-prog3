@@ -1,7 +1,53 @@
 import React from "react";
 import Tarjeta from "./Tarjeta"
 
+export default class TarjetaContenedor{
 
+  constructor(props){
+    super(props);
+    this.state={
+      items: []
+    }
+
+  }
+
+  componentDidMount(){
+    fetch('https://randomuser.me/api/?results=10')
+    .then(result => result.json())
+    .then(data => {
+      this.setState({items: data.results});
+      console.log(data.results)
+    })
+   
+  }
+  
+    render(){
+      return(
+  
+        <div class="body">         
+                  {
+                    this.state.items.map((item)=>{
+                      return(
+                          <Tarjeta 
+                            name={ user.name.first }
+                            lastname= { user.name.last }
+                            img={ user.picture.large }
+                            email= {user.email}
+                            edad= {user.dob.age}
+                          />
+                      )
+                    })
+                  }
+          </div>
+      );
+  }
+  
+
+
+}
+
+
+/*
 function TarjetaContenedor(){
 
     return(
@@ -37,10 +83,9 @@ function TarjetaContenedor(){
 }
 
 export default TarjetaContenedor; 
-
+*/
 
 /*
-
 export default class TarjetaContenedor extends Component {
 
     constructor(){
@@ -90,5 +135,5 @@ borrarTarjeta(idTarjeta){
             );
       }
 
-}
-*/
+} */
+
