@@ -15,9 +15,11 @@ class Container extends Component{
 
   componentDidMount(){
       fetch("https://randomuser.me/api/?results=20")
+        
         .then(result => result.json())
         .then((data)=>{
           this.setState({items: data.results})
+          
         })
         .catch((e)=>{console.log(e)})
 }
@@ -32,24 +34,24 @@ eliminarTarjeta=(idTarjeta)=>{
 }
 
 
-agregarTarjetas(){
-  fetch("https://randomuser.me/api/?results=6")
-  .then(result => result.json())
-  .then(data => {
-    {data.results.map((nuevaTarjeta) =>{
-      this.state.datos.push(nuevaTarjeta)
-  })}
-  this.setState({items:this.state.items});
-  console.log("se agregaron las nuevas tarjetas")
-  })
-}
+// agregarTarjetas(){
+//   fetch("https://randomuser.me/api/?results=6")
+//   .then(result => result.json())
+//   .then(data => {
+//     {data.results.map((nuevaTarjeta) =>{
+//       this.state.datos.push(nuevaTarjeta)
+//   })}
+//   this.setState({items:this.state.items});
+//   console.log("se agregaron las nuevas tarjetas")
+//   })
+// }
 
   render(){
     return (            
        
       <article id="contenedor-flex">
           <div class="center">
-          <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button>
+          {/* <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button> */}
 
       {
                   this.state.items.map((user)=>{
@@ -62,9 +64,13 @@ agregarTarjetas(){
                           id= {user.login.uuid}
                           cumple={user.dob.date}
                           edad= {user.dob.age}
-                          direccion= {user.location}
-                          register={user.registered.date}
-                          telefono= {user.phone}
+                          domicilio= {user.location.street.number.name}
+                          fechaRegistro={user.registered.date}
+                          telefono={user.phone}
+                          pais={user.country}
+                          ciudad={user.city}
+                          estado={user.state}
+                          postal={user.postcode}
                           onBorrar={this.eliminarTarjeta.bind(this)}
                         />
                     )

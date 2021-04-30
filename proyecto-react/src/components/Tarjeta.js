@@ -6,12 +6,15 @@ class Tarjetas extends Component {
     constructor(props){
         super(props);
             this.state ={
-                color: this.props.color
+                color: this.props.color,
+                mostrameDetalle:true
         }
     }
 
-    cambiarColor(){
-        alert("CAMBIASTE EL COLOR CAPO! BIEN AHÍ CRACK...");
+    mostrarDetalle(){
+        this.setState({
+            mostrameDetalle:!this.state.mostrameDetalle
+        })
     }
 
     render(){
@@ -29,6 +32,21 @@ class Tarjetas extends Component {
                     {/* <h3>{this.props.id}, {this.props.cumple}</h3> */}
                     <h3>{this.props.cumple}({this.props.edad})</h3>
                 </div>
+                {
+                    this.state.mostrameDetalle?
+                <div>
+                    <h3>{this.props.domicilio}</h3>
+                    <h3>{this.props.ciudad}</h3>
+                    <h3>{this.props.estado}</h3>
+                    <h3>{this.props.pais}</h3>
+                    <h3>{this.props.postal}</h3>
+                    <h3>{this.props.fechaRegistro}</h3>
+                    <h3>{this.props.telefono}</h3>
+                </div>
+                :null
+                }
+               
+                <button onClick={()=>this.mostrarDetalle()}>Toggle Info</button>
 
                     
                     
