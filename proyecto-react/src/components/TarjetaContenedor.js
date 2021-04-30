@@ -40,6 +40,18 @@ agregarTarjetas=()=>{
       .catch((e)=>{console.log(e)})
 }  
 
+/* filtroTarjeta(usuarios){
+  let paramFiltro= this.state.items.filter ((usuario)=>{
+    return usuario.name.first.toLowerCase() === usuarios.toLowerCase() ||
+    usuario.name.last.toLowerCase() === usuarios.toLowerCase() ||
+    parseInt(usuario.dob.ar) === parseInt(usuarios)
+  })
+  this.setState({
+    items: paramFiltro
+  })
+  console.log(paramFiltro)
+} */
+
   render(){
     return (            
        
@@ -59,12 +71,12 @@ agregarTarjetas=()=>{
                   </form>
 
                   <div>
-              <button class="uk-button uk-button-default uk-button-large" onClick={this.agregarTarjetas}> <a>AGREGAR TARJETAS</a></button>
               </div>
               
               </div>
 
           <div class="center">
+              <button class="uk-button uk-button-default uk-button-large" onClick={this.agregarTarjetas}> <a>AGREGAR TARJETAS</a></button>
                 {
                   this.state.items.map((user)=>{
                     return(
