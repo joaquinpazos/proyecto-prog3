@@ -33,17 +33,17 @@ eliminarTarjeta=(key)=>{
 }
 
 
-// agregarTarjetas(){
-//   fetch("https://randomuser.me/api/?results=6")
-//   .then(result => result.json())
-//   .then(data => {
-//     {data.results.map((nuevaTarjeta) =>{
-//       this.state.datos.push(nuevaTarjeta)
-//   })}
-//   this.setState({items:this.state.items});
-//   console.log("se agregaron las nuevas tarjetas")
-//   })
-// }
+ agregarTarjetas(){
+   fetch("https://randomuser.me/api/?results=6")
+   .then(result => result.json())
+   .then(data => {
+     {data.results.map((nuevaTarjeta) =>{
+       this.state.datos.push(nuevaTarjeta)
+   })}
+   this.setState({items:this.state.items});
+   console.log("se agregaron las nuevas tarjetas")
+   })
+ }
 
   render(){
     return (            
@@ -62,10 +62,10 @@ eliminarTarjeta=(key)=>{
                       <input type="text" placeholder="Buscar por edad"></input>
                       <button type="submit"><i class="fa fa-search"></i></button>
                   </form>
+              <button className="buttonAgregarTarjetas" onClick={()=> this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button> 
               </div>
 
           <div class="center">
-          {/* <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button> */}
 
                 {
                   this.state.items.map((user)=>{
