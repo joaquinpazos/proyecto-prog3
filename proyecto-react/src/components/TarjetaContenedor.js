@@ -63,13 +63,14 @@ eliminarTarjeta=(key)=>{
                           id= {user.login.uuid}
                           cumple={user.dob.date}
                           edad= {user.dob.age}
-                          domicilio= {user.location.street.number.name}
+                          calle={user.location.street.name}
+                          numero={user.location.street.number}
                           fechaRegistro={user.registered.date}
                           telefono={user.phone}
-                          pais={user.country}
-                          ciudad={user.city}
-                          estado={user.state}
-                          postal={user.postcode}
+                          pais={user.location.country}
+
+                          estado={user.location.state}
+                          postal={user.location.postcode}
                           onBorrar={this.eliminarTarjeta.bind(this)}
                         />
                     )

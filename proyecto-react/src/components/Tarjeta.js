@@ -51,14 +51,13 @@ class Tarjetas extends Component {
                 </div>
                 {
                     this.state.mostrameDetalle?
-                <div>
-                    <h3>{this.props.domicilio}</h3>
-                    <h3>{this.props.ciudad}</h3>
-                    <h3>{this.props.estado}</h3>
-                    <h3>{this.props.pais}</h3>
-                    <h3>{this.props.postal}</h3>
-                    <h3>{this.props.fechaRegistro}</h3>
-                    <h3>{this.props.telefono}</h3>
+                <div class="general">
+                    <h3>DOMICILIO:{this.props.calle} {this.props.numero}</h3>
+                    <h3>ESTADO:{this.props.estado}</h3>
+                    <h3>PAÍS:{this.props.pais}</h3>
+                    <h3>CÓDIGO POSTAL:{this.props.postal}</h3>
+                    <h3>FECHA DE REGISTRO:{this.props.fechaRegistro}</h3>
+                    <h3>TELÉFONO:{this.props.telefono}</h3>
                 </div>
                 :null
                 }
