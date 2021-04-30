@@ -14,6 +14,10 @@
   padding-bottom: 2.5rem;
 }
 
+.borrarTarjeta{
+  color: black;
+  background-color: #d90429;
+}
 
 
 /* CSS header empieza acá */
@@ -48,9 +52,9 @@ html, body {
 .contenedor-buscador{
   display:flex;
   position: absolute;
-  top:18%;
-  left:23%;
-  
+  top:20%;
+  left:20%;
+  right: 20%;
 }
 
 form.example input[type=text] {
@@ -266,6 +270,15 @@ form.example::after {
   justify-content: center; */
   
   
+}
+
+.card .general h3{
+  font-size: 60%;
+}
+
+.card .general img{
+  position: relative;
+  right: 0;
 }
 
 .card .general .more {

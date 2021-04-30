@@ -1,94 +1,103 @@
-import React from "react";
-import Tarjeta from "./Tarjeta"
+import React, {Component} from 'react';
+import Tarjetas from "./Tarjeta"
 
+class Container extends Component{
 
-function TarjetaContenedor(){
+      
+  constructor(props){
+    super(props);
+    this.state={
+      items:[],
 
-    return(
-
-    <article id="contenedor-flex">
-
-        <div class="center">
-
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                <Tarjeta name="Lautaro Ortiz" mail="ortizl@udesa.edu.ar" cumple="12/04/1999"/>
-                
-                
-                
-
-        </div>
-
-    </article>
-
-        
-
-    );
-}
-
-export default TarjetaContenedor; 
-
-
-/*
-
-export default class TarjetaContenedor extends Component {
-
-    constructor(){
-        super();
-        this.state ={
-          datos: [],
-        }
-     }  
-
----> funcion de agregar tarjeta
-
-AgregarTarjeta(){
-    console.log("se agregaro una nueva tarjeta")
-    fetch("https://randomuser.me/api/?results=6")
-    .then(result => result.json())
-    .then (info => {
-        info.results.map((nuevaTarjeta) => {
-            this.state.datos.push(nuevaTarjeta)           
-        })
-        this.setState({datos:this.state.datos});
-    })
+    }
   }
 
----> funcion de borrar tarjeta
 
-borrarTarjeta(idTarjeta){
-    console.log("Se borro la tarjeta")
-    let resultado = this.state.datos.filter( (info) => {
-      return info.id !== idTarjeta
-    });
-    this.setState({datos: resultado});
-    console.log("Se borro la tarjeta " + idTarjeta)
- }
-
-      render(){
-
-        return(
-                <div className="body">
-
-                    <div className="center"> 
-
-                            <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button>
-                   
-                            <div/>
-                
-                <div/>
-            );
-      }
-
+componentDidMount(){
+      fetch("https://randomuser.me/api/?results=20")
+        
+        .then(result => result.json())
+        .then((data)=>{
+          this.setState({items: data.results})
+          
+        })
+        .catch((e)=>{console.log(e)})
 }
-*/
+
+eliminarTarjeta=(key)=>{
+  let lasTarjetas=this.state.items.filter((card)=>{
+      return card.login.uuid !== key;
+  })
+  this.setState({items: lasTarjetas })
+  console.log(this.state.items)
+}
+
+
+// agregarTarjetas(){
+//   fetch("https://randomuser.me/api/?results=6")
+//   .then(result => result.json())
+//   .then(data => {
+//     {data.results.map((nuevaTarjeta) =>{
+//       this.state.datos.push(nuevaTarjeta)
+//   })}
+//   this.setState({items:this.state.items});
+//   console.log("se agregaron las nuevas tarjetas")
+//   })
+// }
+
+  render(){
+    return (            
+       
+      <article id="contenedor-flex">
+
+              <div class="contenedor-buscador"> 
+                  <div id="contenedor-buscador-div">
+                      <h1>Buscador de perfiles</h1>
+                  </div>
+                  <form class="example" action="buscador.html" name="search">
+                      <input type="text" placeholder="Buscar por nombre"></input>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <input type="text" placeholder="Buscar por apellido"></input>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <input type="text" placeholder="Buscar por edad"></input>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+              </div>
+
+          <div class="center">
+          {/* <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button> */}
+
+                {
+                  this.state.items.map((user)=>{
+                    return(
+                        <Tarjetas 
+                          name={ user.name.first }
+                          lastname= { user.name.last }
+                          img={ user.picture.large }
+                          email= {user.email}
+                          id= {user.login.uuid}
+                          cumple={user.dob.date}
+                          edad= {user.dob.age}
+                          calle={user.location.street.name}
+                          numero={user.location.street.number}
+                          fechaRegistro={user.registered.date}
+                          telefono={user.phone}
+                          pais={user.location.country}
+
+                          estado={user.location.state}
+                          postal={user.location.postcode}
+                          onBorrar={this.eliminarTarjeta.bind(this)}
+                        />
+                    )
+                  })
+                }
+
+
+              </div>
+              </article>
+    );
+  }
+}
+
+export default Container;
+
