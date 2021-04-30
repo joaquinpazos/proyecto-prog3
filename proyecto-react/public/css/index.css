@@ -52,9 +52,9 @@ html, body {
 .contenedor-buscador{
   display:flex;
   position: absolute;
-  top:18%;
-  left:23%;
-  
+  top:20%;
+  left:20%;
+  right: 20%;
 }
 
 form.example input[type=text] {

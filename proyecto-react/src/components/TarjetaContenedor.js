@@ -49,10 +49,25 @@ eliminarTarjeta=(key)=>{
     return (            
        
       <article id="contenedor-flex">
+
+              <div class="contenedor-buscador"> 
+                  <div id="contenedor-buscador-div">
+                      <h1>Buscador de perfiles</h1>
+                  </div>
+                  <form class="example" action="buscador.html" name="search">
+                      <input type="text" placeholder="Buscar por nombre"></input>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <input type="text" placeholder="Buscar por apellido"></input>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <input type="text" placeholder="Buscar por edad"></input>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+              </div>
+
           <div class="center">
           {/* <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button> */}
 
-      {
+                {
                   this.state.items.map((user)=>{
                     return(
                         <Tarjetas 

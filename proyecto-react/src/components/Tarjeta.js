@@ -18,7 +18,6 @@ class Tarjetas extends Component {
         })
     }
 
-
     mostrarDetalle(){
         this.setState({
             mostrameDetalle:!this.state.mostrameDetalle
@@ -47,10 +46,6 @@ class Tarjetas extends Component {
                     <div className='buttonBorrarTarjeta'>
                         <button className='borrarTarjeta' onClick={this.props.onBorrar.bind(this, this.props.id)}>X</button>
                     </div>
-
-                
-
-                
 
                   {
                       this.state.volveNormal?
@@ -85,10 +80,6 @@ class Tarjetas extends Component {
                         this.mostrarDetalle();
                         this.volverNormal();
                 }}>Detalle</button>
-                    
-
-                    
-                   
 
             </div>
         )
