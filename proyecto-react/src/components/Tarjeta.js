@@ -20,7 +20,7 @@ class Tarjetas extends Component {
         
                 <div class="general" >
                 <div className='buttonBorrarTarjeta'>
-                            <button className='borrarTarjeta' onClick={()=>this.props.onDelete.bind(this, this.props.id)}>X</button>
+                            <button className='borrarTarjeta' onClick={()=>this.props.onBorrar.bind(this, this.props.id)}>X</button>
                         </div>
                     <img src={this.props.img} class='imagen' alt="hola"></img>
                     <h3>{ this.props.name }</h3>

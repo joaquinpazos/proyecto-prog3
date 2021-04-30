@@ -22,11 +22,26 @@ class Container extends Component{
         .catch((e)=>{console.log(e)})
 }
 
-eliminarTarjeta=(key)=>{
+//NO FUNCIONA
+eliminarTarjeta=(idTarjeta)=>{
   let lasTarjetas=this.state.items.filter((card)=>{
-      return card.login.uuid !== key;
+      return card.login.uuid !== idTarjeta;
   })
   this.setState({items: lasTarjetas })
+  console.log(this.state.items)
+}
+
+
+agregarTarjetas(){
+  fetch("https://randomuser.me/api/?results=6")
+  .then(result => result.json())
+  .then(data => {
+    {data.results.map((nuevaTarjeta) =>{
+      this.state.datos.push(nuevaTarjeta)
+  })}
+  this.setState({items:this.state.items});
+  console.log("se agregaron las nuevas tarjetas")
+  })
 }
 
   render(){
@@ -34,7 +49,7 @@ eliminarTarjeta=(key)=>{
        
       <article id="contenedor-flex">
           <div class="center">
-     
+          <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button>
 
       {
                   this.state.items.map((user)=>{
@@ -50,6 +65,7 @@ eliminarTarjeta=(key)=>{
                           direccion= {user.location}
                           register={user.registered.date}
                           telefono= {user.phone}
+                          onBorrar={this.eliminarTarjeta.bind(this)}
                         />,
                         <Tarjetas 
                           name={ user.name.first }
@@ -62,6 +78,7 @@ eliminarTarjeta=(key)=>{
                           direccion= {user.location}
                           register={user.registered.date}
                           telefono= {user.phone}
+                          onBorrar={this.eliminarTarjeta.bind(this)}
                         />,
                         <Tarjetas 
                           name={ user.name.first }
@@ -74,11 +91,14 @@ eliminarTarjeta=(key)=>{
                           direccion= {user.location}
                           register={user.registered.date}
                           telefono= {user.phone}
+                          onBorrar={this.eliminarTarjeta.bind(this)}
                         />
                         
                     )
                   })
                 }
+
+
               </div>
               </article>
     );
@@ -86,3 +106,4 @@ eliminarTarjeta=(key)=>{
 }
 
 export default Container;
+
