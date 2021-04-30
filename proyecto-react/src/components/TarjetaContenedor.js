@@ -44,7 +44,24 @@ agregarTarjetas=()=>{
       })
       // .then((newCards => this.setState({items: newCards.results})))
       // .catch((e)=>{console.log(e)})
-}  
+} 
+
+filtrarTarjetas=()=>{
+  let nacionalidadFiltrar = document.querySelector(".nacionalidadFiltro").value
+  // let apellidoFiltrar = document.querySelector(".apellidoFiltro").value
+  // let edadFiltrar = document.querySelector(".edadFiltrar").value
+  fetch("https://radomuser.me/api/?results=20&?nat="+nacionalidadFiltrar)
+    .then(result=> result.json())
+    .then(data=>{
+      this.setState({items:data.results})
+    
+    // .then(datos =>{
+    //   datos.results.map((dato)=>{
+    //     this.state.items.push(dato)})
+    //     this.setState({items:this.state.items})
+    })
+
+}
 
 /* reset(){
   this.setState({items: this.state.reset})
@@ -71,11 +88,11 @@ agregarTarjetas=()=>{
                       <h1>Buscador de perfiles</h1>
                   </div>
                   <form class="example" action="buscador.html" name="search">
-                      <input type="text" placeholder="Buscar por nombre"></input>
+                      <input type="text" placeholder="Buscar por nombre" className="nacionalidadFiltro" onClick={this.filtrarTarjetas}></input>
                       <button type="submit"><i class="fa fa-search"></i></button>
-                      <input type="text" placeholder="Buscar por apellido"></input>
+                      <input type="text" placeholder="Buscar por apellido" className="apellidoFiltro"></input>
                       <button type="submit"><i class="fa fa-search"></i></button>
-                      <input type="text" placeholder="Buscar por edad"></input>
+                      <input type="text" placeholder="Buscar por edad" className="edadFiltro"></input>
                       <button type="submit"><i class="fa fa-search"></i></button>
                       {/* <button class="uk-button uk-button-default uk-button-large" onClick={this.reset.bind(this)}> <a> Resetear </a> </button> */}
                   </form>
@@ -86,7 +103,7 @@ agregarTarjetas=()=>{
               </div>
 
           <div class="center">
-              <input className="numTarjetas" type="number" ></input>
+              <input className="numTarjetas" type="number" placeholder="Cantidad"></input>
               <button class="uk-button uk-button-default uk-button-large" onClick={this.agregarTarjetas}> <a>AGREGAR TARJETAS</a></button>
                 {
                   this.state.items.map((user)=>{
