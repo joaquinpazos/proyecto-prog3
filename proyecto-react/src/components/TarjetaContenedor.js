@@ -45,7 +45,7 @@ agregarTarjetas=()=>{
       // .then((newCards => this.setState({items: newCards.results})))
       // .catch((e)=>{console.log(e)})
 } 
-
+/*
 filtrarTarjetas=()=>{
   let nacionalidadFiltrar = document.querySelector(".nacionalidadFiltro").value
   // let apellidoFiltrar = document.querySelector(".apellidoFiltro").value
@@ -61,22 +61,21 @@ filtrarTarjetas=()=>{
     //     this.setState({items:this.state.items})
     })
 
+} */
+
+
+filtrarTarjetas(usuarios){
+  let nombreFiltro= this.state.items.filter ((usuario)=>{
+    console.log(usuario.name.first)
+    return (
+      usuario.name.first.toLowerCase() === usuarios.toLowerCase() ||
+      usuario.name.last.toLowerCase() === usuarios.toLowerCase() ||
+    parseInt(usuario.dob.ar) === parseInt(usuarios)
+    )
+  })
+  this.setState({items: nombreFiltro})
 }
 
-/* reset(){
-  this.setState({items: this.state.reset})
-} */
-/* filtroTarjeta(usuarios){
-  let paramFiltro= this.state.items.filter ((usuario)=>{
-    return usuario.name.first.toLowerCase() === usuarios.toLowerCase() ||
-    usuario.name.last.toLowerCase() === usuarios.toLowerCase() ||
-    parseInt(usuario.dob.ar) === parseInt(usuarios)
-  })
-  this.setState({
-    items: paramFiltro
-  })
-  console.log(paramFiltro)
-} */
 
   render(){
     return (            
@@ -88,12 +87,12 @@ filtrarTarjetas=()=>{
                       <h1>Buscador de perfiles</h1>
                   </div>
                   <form class="example" action="buscador.html" name="search">
-                      <input type="text" placeholder="Buscar por nombre" className="nacionalidadFiltro" onClick={this.filtrarTarjetas}></input>
-                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <input type="text" placeholder="Buscar por nombre" className="nombreFiltro"></input>
+                      <button type="submit"><i class="fa fa-search" onClick={this.filtrarTarjetas.bind(this)}></i></button>
                       <input type="text" placeholder="Buscar por apellido" className="apellidoFiltro"></input>
-                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <button type="submit"><i class="fa fa-search" onClick={this.filtrarTarjetas.bind(this)}></i></button>
                       <input type="text" placeholder="Buscar por edad" className="edadFiltro"></input>
-                      <button type="submit"><i class="fa fa-search"></i></button>
+                      <button type="submit"><i class="fa fa-search" onClick={this.filtrarTarjetas.bind(this)} ></i></button>
                       {/* <button class="uk-button uk-button-default uk-button-large" onClick={this.reset.bind(this)}> <a> Resetear </a> </button> */}
                   </form>
 
