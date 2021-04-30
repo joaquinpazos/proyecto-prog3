@@ -53,7 +53,7 @@ class Tarjetas extends Component {
                 
 
                   {
-                      this.state.mostrameDetalle?
+                      this.state.volveNormal?
                   
                 <div class="general" >
 
