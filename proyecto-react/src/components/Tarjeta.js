@@ -7,9 +7,17 @@ class Tarjetas extends Component {
         super(props);
             this.state ={
                 color: this.props.color,
-                mostrameDetalle:true
+                mostrameDetalle:false,
+                volveNormal:false,
         }
     }
+
+    volverNormal(){
+        this.setState({
+            volveNormal:!this.state.volveNormal
+        })
+    }
+
 
     mostrarDetalle(){
         this.setState({
@@ -34,21 +42,30 @@ class Tarjetas extends Component {
 
     render(){
         return(
-            <div class="card green" onClick={this.cambiarColor} >
+            <div class="card green" >
 
                     <div className='buttonBorrarTarjeta'>
                         <button className='borrarTarjeta' onClick={this.props.onBorrar.bind(this, this.props.id)}>X</button>
                     </div>
 
+                
+
+                    { 
+                this.state.volveNormal?
+
+                  
                 <div class="general" >
 
                     <img src={this.props.img} class='imagen' alt="hola"></img>
                     <h3>NOMBRE: { this.props.name }</h3>
                     <h3>APELLIDO: { this.props.lastname }</h3>
                     <h3>EMAIL: {this.props.email}</h3>
-                    {/* <h3>{this.props.id}, {this.props.cumple}</h3> */}
                     <h3>FECHA DE NACIMIENTO: {this.props.cumple} ({this.props.edad})</h3>
                 </div>
+                :null
+            }
+            <button onClick={()=>this.volverNormal()}>Normal</button>
+                               
                 {
                     this.state.mostrameDetalle?
                 <div class="general">
@@ -62,10 +79,10 @@ class Tarjetas extends Component {
                 :null
                 }
                
-                <button onClick={()=>this.mostrarDetalle()}>Toggle Info</button>
+                <button onClick={()=>this.mostrarDetalle()}>Detalle</button>
 
                     
-                    {/* aaaaaaaaaaaaa */}
+                   
 
             </div>
         )
