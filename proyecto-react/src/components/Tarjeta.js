@@ -22,9 +22,13 @@ class Tarjetas extends Component {
                     <img src={this.props.img} class='imagen' alt="hola"></img>
                     <h3>{ this.props.name }</h3>
                     <h3>{ this.props.lastname }</h3>
-                    <p>{this.props.email}</p>
-                    <p>{this.props.id}({this.props.edad})</p>
+                    <h3>{this.props.email}</h3>
+                    {/* <h3>{this.props.id}, {this.props.cumple}</h3> */}
+                    <h3>{this.props.id}({this.props.edad})</h3>
                 </div>
+
+                    
+                    
 
             </div>
         )

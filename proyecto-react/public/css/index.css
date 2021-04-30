@@ -268,6 +268,15 @@ form.example::after {
   
 }
 
+.card .general h3{
+  font-size: 60%;
+}
+
+.card .general img{
+  position: relative;
+  right: 0;
+}
+
 .card .general .more {
   position: absolute;
   bottom: 1rem;
