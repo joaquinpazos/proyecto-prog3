@@ -25,7 +25,7 @@ class Container extends Component{
 //NO FUNCIONA
 eliminarTarjeta=(idTarjeta)=>{
   let lasTarjetas=this.state.items.filter((card)=>{
-      return card.login.uuid !== idTarjeta;
+      return card.login.id !== idTarjeta;
   })
   this.setState({items: lasTarjetas })
   console.log(this.state.items)
@@ -66,34 +66,7 @@ agregarTarjetas(){
                           register={user.registered.date}
                           telefono= {user.phone}
                           onBorrar={this.eliminarTarjeta.bind(this)}
-                        />,
-                        <Tarjetas 
-                          name={ user.name.first }
-                          lastname= { user.name.last }
-                          img={ user.picture.large }
-                          email= {user.email}
-                          id= {user.login.uuid}
-                          cumple={user.dob.date}
-                          edad= {user.dob.age}
-                          direccion= {user.location}
-                          register={user.registered.date}
-                          telefono= {user.phone}
-                          onBorrar={this.eliminarTarjeta.bind(this)}
-                        />,
-                        <Tarjetas 
-                          name={ user.name.first }
-                          lastname= { user.name.last }
-                          img={ user.picture.large }
-                          email= {user.email}
-                          id= {user.login.uuid}
-                          cumple={user.dob.date}
-                          edad= {user.dob.age}
-                          direccion= {user.location}
-                          register={user.registered.date}
-                          telefono= {user.phone}
-                          onBorrar={this.eliminarTarjeta.bind(this)}
                         />
-                        
                     )
                   })
                 }
