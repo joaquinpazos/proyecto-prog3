@@ -40,6 +40,9 @@ agregarTarjetas=()=>{
       .catch((e)=>{console.log(e)})
 }  
 
+/* reset(){
+  this.setState({items: this.state.reset})
+} */
 /* filtroTarjeta(usuarios){
   let paramFiltro= this.state.items.filter ((usuario)=>{
     return usuario.name.first.toLowerCase() === usuarios.toLowerCase() ||
@@ -68,6 +71,7 @@ agregarTarjetas=()=>{
                       <button type="submit"><i class="fa fa-search"></i></button>
                       <input type="text" placeholder="Buscar por edad"></input>
                       <button type="submit"><i class="fa fa-search"></i></button>
+                      {/* <button class="uk-button uk-button-default uk-button-large" onClick={this.reset.bind(this)}> <a> Resetear </a> </button> */}
                   </form>
 
                   <div>
