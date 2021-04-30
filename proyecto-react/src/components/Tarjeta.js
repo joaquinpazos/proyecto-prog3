@@ -79,7 +79,7 @@ class Tarjetas extends Component {
                     onClick = {() => {
                         this.mostrarDetalle();
                         this.volverNormal();
-                }}>Detalle</button>
+                }}>Toggle Detalle</button>
 
             </div>
         )

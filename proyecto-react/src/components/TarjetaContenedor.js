@@ -34,10 +34,16 @@ eliminarTarjeta=(key)=>{
 
 
 agregarTarjetas=()=>{
-  fetch("https://randomuser.me/api/?results=")
+  let cantidad = document.querySelector(".numTarjetas").value
+  fetch("https://randomuser.me/api/?results=" + cantidad)
       .then(result => result.json())
-      .then((newCards => this.setState({items: newCards.results})))
-      .catch((e)=>{console.log(e)})
+      .then(datos => {
+        datos.results.map((dato)=>{
+          this.state.items.push(dato)})
+          this.setState({items:this.state.items})
+      })
+      // .then((newCards => this.setState({items: newCards.results})))
+      // .catch((e)=>{console.log(e)})
 }  
 
 /* reset(){
@@ -80,6 +86,7 @@ agregarTarjetas=()=>{
               </div>
 
           <div class="center">
+              <input className="numTarjetas" type="number" ></input>
               <button class="uk-button uk-button-default uk-button-large" onClick={this.agregarTarjetas}> <a>AGREGAR TARJETAS</a></button>
                 {
                   this.state.items.map((user)=>{
