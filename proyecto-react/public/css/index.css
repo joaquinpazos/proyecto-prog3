@@ -340,6 +340,16 @@ form.example::after {
   margin-bottom: 0.5rem,
 
 }
+
+.uk-button-large{
+  width: 80%;
+  background-color: black;
+  text-align: center;
+}
+
+.uk-button-large a{
+  color: white;
+}
 /* 
 .footer-heading a:hover{
   color: red;

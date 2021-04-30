@@ -33,19 +33,29 @@ eliminarTarjeta=(key)=>{
 }
 
 
+agregarTarjetas=()=>{
+  fetch("https://randomuser.me/api/?results=")
+      .then(result => result.json())
+      .then((newCards => this.setState({items: newCards.results})))
+      .catch((e)=>{console.log(e)})
+}   
+
+
 // agregarTarjetas(){
 //   fetch("https://randomuser.me/api/?results=6")
 //   .then(result => result.json())
 //   .then(data => {
-//     {data.results.map((nuevaTarjeta) =>{
-//       this.state.datos.push(nuevaTarjeta)
-//   })}
-//   this.setState({items:this.state.items});
-//   console.log("se agregaron las nuevas tarjetas")
-//   })
-// }
+//    {data.results.map((nuevaTarjeta) =>{
+//    this.state.datos.push(nuevaTarjeta)
+//    })}
+//    this.setState({items:this.state.items});
+//    console.log("se agregaron las nuevas tarjetas")
+//})
+//}
 
   render(){
+    const laTarjeta = this.state.items[0]
+
     return (            
        
       <article id="contenedor-flex">
@@ -62,11 +72,14 @@ eliminarTarjeta=(key)=>{
                       <input type="text" placeholder="Buscar por edad"></input>
                       <button type="submit"><i class="fa fa-search"></i></button>
                   </form>
+
+                  <div>
+              <button class="uk-button uk-button-default uk-button-large" onClick={this.agregarTarjetas}> <a>AGREGAR TARJETAS</a></button>
+              </div>
+              
               </div>
 
           <div class="center">
-          {/* <button className="buttonAgregarTarjetas" onClick={this.agregarTarjetas.bind(this)} > AGREGAR TARJETAS </button> */}
-
                 {
                   this.state.items.map((user)=>{
                     return(
@@ -83,10 +96,10 @@ eliminarTarjeta=(key)=>{
                           fechaRegistro={user.registered.date}
                           telefono={user.phone}
                           pais={user.location.country}
-
                           estado={user.location.state}
                           postal={user.location.postcode}
                           onBorrar={this.eliminarTarjeta.bind(this)}
+                          onAgregar={this.agregarTarjetas.bind(this)}
                         />
                     )
                   })
