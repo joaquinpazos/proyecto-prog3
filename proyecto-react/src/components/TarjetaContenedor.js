@@ -13,7 +13,7 @@ class Container extends Component{
   }
 
 
-  componentDidMount(){
+componentDidMount(){
       fetch("https://randomuser.me/api/?results=20")
         
         .then(result => result.json())
@@ -24,10 +24,9 @@ class Container extends Component{
         .catch((e)=>{console.log(e)})
 }
 
-//NO FUNCIONA
-eliminarTarjeta=(idTarjeta)=>{
+eliminarTarjeta=(key)=>{
   let lasTarjetas=this.state.items.filter((card)=>{
-      return card.login.id !== idTarjeta;
+      return card.login.uuid !== key;
   })
   this.setState({items: lasTarjetas })
   console.log(this.state.items)
