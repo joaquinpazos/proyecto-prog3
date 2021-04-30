@@ -19,12 +19,15 @@ class Tarjetas extends Component {
             <div class="card green" onClick={this.cambiarColor} >
         
                 <div class="general" >
+                <div className='buttonBorrarTarjeta'>
+                            <button className='borrarTarjeta' onClick={()=>this.props.onDelete.bind(this, this.props.id)}>X</button>
+                        </div>
                     <img src={this.props.img} class='imagen' alt="hola"></img>
                     <h3>{ this.props.name }</h3>
                     <h3>{ this.props.lastname }</h3>
                     <h3>{this.props.email}</h3>
                     {/* <h3>{this.props.id}, {this.props.cumple}</h3> */}
-                    <h3>{this.props.id}({this.props.edad})</h3>
+                    <h3>{this.props.cumple}({this.props.edad})</h3>
                 </div>
 
                     

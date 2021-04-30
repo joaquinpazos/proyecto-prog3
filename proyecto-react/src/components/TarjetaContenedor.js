@@ -22,6 +22,12 @@ class Container extends Component{
         .catch((e)=>{console.log(e)})
 }
 
+eliminarTarjeta=(key)=>{
+  let lasTarjetas=this.state.items.filter((card)=>{
+      return card.login.uuid !== key;
+  })
+  this.setState({items: lasTarjetas })
+}
 
   render(){
     return (            
@@ -38,7 +44,7 @@ class Container extends Component{
                           lastname= { user.name.last }
                           img={ user.picture.large }
                           email= {user.email}
-                          id= {user.uuid}
+                          id= {user.login.uuid}
                           cumple={user.dob.date}
                           edad= {user.dob.age}
                           direccion= {user.location}
@@ -50,7 +56,8 @@ class Container extends Component{
                           lastname= { user.name.last }
                           img={ user.picture.large }
                           email= {user.email}
-                          id= {user.uuid}
+                          id= {user.login.uuid}
+                          cumple={user.dob.date}
                           edad= {user.dob.age}
                           direccion= {user.location}
                           register={user.registered.date}
@@ -61,7 +68,8 @@ class Container extends Component{
                           lastname= { user.name.last }
                           img={ user.picture.large }
                           email= {user.email}
-                          id= {user.uuid}
+                          id= {user.login.uuid}
+                          cumple={user.dob.date}
                           edad= {user.dob.age}
                           direccion= {user.location}
                           register={user.registered.date}
