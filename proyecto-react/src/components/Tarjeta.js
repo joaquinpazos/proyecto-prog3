@@ -49,7 +49,7 @@ class Tarjetas extends Component {
                 <button onClick={()=>this.mostrarDetalle()}>Toggle Info</button>
 
                     
-                    
+                    {/* aaaaaaaaaaaaa */}
 
             </div>
         )
