@@ -33,25 +33,17 @@ eliminarTarjeta=(key)=>{
 }
 
 
-agregarTarjetas=()=>{
-  fetch("https://randomuser.me/api/?results=")
-      .then(result => result.json())
-      .then((newCards => this.setState({items: newCards.results})))
-      .catch((e)=>{console.log(e)})
-}   
-
-
-// agregarTarjetas(){
-//   fetch("https://randomuser.me/api/?results=6")
-//   .then(result => result.json())
-//   .then(data => {
-//    {data.results.map((nuevaTarjeta) =>{
-//    this.state.datos.push(nuevaTarjeta)
-//    })}
-//    this.setState({items:this.state.items});
-//    console.log("se agregaron las nuevas tarjetas")
-//})
-//}
+ agregarTarjetas(){
+   fetch("https://randomuser.me/api/?results=6")
+   .then(result => result.json())
+   .then(data => {
+     {data.results.map((nuevaTarjeta) =>{
+       this.state.datos.push(nuevaTarjeta)
+   })}
+   this.setState({items:this.state.items});
+   console.log("se agregaron las nuevas tarjetas")
+   })
+ }
 
   render(){
     const laTarjeta = this.state.items[0]
