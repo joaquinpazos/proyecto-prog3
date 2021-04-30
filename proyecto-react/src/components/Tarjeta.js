@@ -8,7 +8,7 @@ class Tarjetas extends Component {
             this.state ={
                 color: this.props.color,
                 mostrameDetalle:false,
-                volveNormal:false,
+                volveNormal:true,
         }
     }
 
@@ -50,9 +50,10 @@ class Tarjetas extends Component {
 
                 
 
-                    { 
-                this.state.volveNormal?
+                
 
+                  {
+                      this.state.mostrameDetalle?
                   
                 <div class="general" >
 
@@ -62,9 +63,9 @@ class Tarjetas extends Component {
                     <h3>EMAIL: {this.props.email}</h3>
                     <h3>FECHA DE NACIMIENTO: {this.props.cumple} ({this.props.edad})</h3>
                 </div>
+                
                 :null
             }
-            <button onClick={()=>this.volverNormal()}>Normal</button>
                                
                 {
                     this.state.mostrameDetalle?
@@ -79,7 +80,12 @@ class Tarjetas extends Component {
                 :null
                 }
                
-                <button onClick={()=>this.mostrarDetalle()}>Detalle</button>
+                <button
+                    onClick = {() => {
+                        this.mostrarDetalle();
+                        this.volverNormal();
+                }}>Detalle</button>
+                    
 
                     
                    
